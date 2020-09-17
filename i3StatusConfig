@@ -29,15 +29,15 @@ ethernet _first_ {
 }
 
 disk "/" {
-        format = "%avail"
+        format = "Free: %avail"
 }
 
 cpu_usage {
-		format = "%usage"
+		format = "CPU: %usage"
 }
 
 memory {
-        format = "%used of %available"
+        format = "%used in use, %available free"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
