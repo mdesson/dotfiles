@@ -35,6 +35,13 @@ Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'frazrepo/vim-rainbow'
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" markdown settings
+let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_math = 1
 
 " lightline settings
 let g:lightline = {'colorscheme': 'seoul256',}
