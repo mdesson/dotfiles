@@ -210,9 +210,11 @@ bar {
 # exec i3bar --bar_id=bar-0
 
 # rotate left screen to correct orientation
-
 exec xrandr --output DP-1 --rotate left
 exec killall i3bar && i3bar --bar_id=bar-0
+
+# set the desktop background
+exec --no-startup-id nitrogen --restore
 
 # screenshot utility
 bindsym $mod+Shift+s exec flameshot gui
@@ -233,3 +235,4 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
