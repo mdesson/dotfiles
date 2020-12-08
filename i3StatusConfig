@@ -16,6 +16,7 @@ order += "ethernet _first_"
 order += "disk /"
 order += "cpu_usage"
 order += "memory"
+order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
@@ -40,6 +41,14 @@ memory {
         format = "%used in use, %available free"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
 
 tztime local {

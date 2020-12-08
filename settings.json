@@ -69,6 +69,5 @@
   "liveshare.joinDebugSessionOption": "Prompt",
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
-  "editor.formatOnSave": true,
   "editor.lineNumbers": "relative"
 }
