@@ -38,6 +38,7 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/vim-peekaboo'
 
 " markdown settings
 let g:vim_markdown_folding_disabled = 1
