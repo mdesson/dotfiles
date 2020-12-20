@@ -1,11 +1,50 @@
 " === VIM NOTES ===
 " /search
+" <Ctrl-g> Next occurence of pattern
+" <Ctrl-t> Previous occurence of pattern
 " Ctrl-V: Visual block mode (multi line)
 " I: (in block mode) insert BEFORE selected block, this is how we add comment
 " :tabn next tab
 " :tabp prev tab
 " \"ay (note: ignore escape) yank to register a
 " \"+y or "*y access clipboard. +=ctrl-c, *=X11 clipboard
+
+" === Efficient Changes ===
+" da" [d]elete [a]round double quotes
+" di] [d]elete [i]nside square brackets
+" ci{ [c]hange [i]nside curly braces
+" dap [d]elete [a]round [p]aragraph
+" vaw [v]isually select [a]round [w]ord
+
+" === Quick Replacements ===
+" dtc [d]elete [t]o next `c`
+" cf, [c]change [f]orward to the `,`
+" ya' [y]ank [a]round `'`
+
+" === Change Until Pattern ===
+" d/foo<Enter> 		Delete up until `foo` is found
+" c/bar<Enter> 		Change everything up to `bar`
+" y/pattern<Enter> 	Yank everything until `pattern`
+
+" === Resize Splits ===
+" <Ctrl-w> - Decrease height of split by one line
+" <Ctrl-w> + Increase height of split by one line
+" <Ctrl-w> > Decrease width of split by one line
+" <Ctrl-w> < Decrease width of split by one line
+" <Ctrl-w> = Make all splits equal size
+" 5 <Ctrl-w> > Make left split 5 columns wider
+" <Ctrl-w> J Switch orientation of splits
+
+" === Editing Visual Selections ===
+" o Move cursor to [o]pposite side of selection
+
+" === Find and Replace Across Files ===
+" 1) Populate args list with list of files
+" :args path/to/file/glob/*.js
+" 2) Perform substitution across files
+" :argdo %s/pattern/replacement/g
+" 3) Save files
+" :argdo update
 
 " === vimrc BEGINS === 
 " laststatus forces display of lightline

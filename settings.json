@@ -1,6 +1,6 @@
 {
   "editor.suggestSelection": "first",
-  "editor.formatOnSave": "true",
+  "editor.formatOnSave": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.exclude": {
     "**/.classpath": true,
