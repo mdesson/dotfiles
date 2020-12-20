@@ -180,3 +180,6 @@ set termwinsize=10x0
 
 " set utf-8 for full emoji support
 set encoding=utf-8
+
+" open vimrc in split to see vim notes
+nnoremap <silent> ,<space> :sp ~/.vimrc<CR>
