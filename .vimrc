@@ -182,4 +182,4 @@ set termwinsize=10x0
 set encoding=utf-8
 
 " open vimrc in split to see vim notes
-nnoremap <silent> ,<space> :sp ~/.vimrc<CR>
+noremap <silent> ,<space> :20sview ~/.vimrc<CR>
