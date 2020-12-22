@@ -45,6 +45,9 @@
 " :argdo %s/pattern/replacement/g
 " 3) Save files
 " :argdo update
+" === Terminal ===
+" <Ctrl-w> N scroll through terminal
+" i stop scrolling
 
 " === vimrc BEGINS === 
 " laststatus forces display of lightline
@@ -176,7 +179,7 @@ let g:rainbow_active = 1
 
 " terminal settings
 set splitbelow
-set termwinsize=10x0
+set termwinsize=15*0
 
 " set utf-8 for full emoji support
 set encoding=utf-8
