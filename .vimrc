@@ -95,6 +95,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " nerdtree toggle is Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
+" show dotfiles in nerdtree
+let NERDTreeShowHidden=1
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
