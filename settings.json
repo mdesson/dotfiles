@@ -1,6 +1,6 @@
 {
   "editor.suggestSelection": "first",
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.exclude": {
     "**/.classpath": true,
@@ -55,7 +55,7 @@
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.margin.top": "1cm",
   "markdown-pdf.styles": ["~/.config/Code - OSS/User/markdown-pdf/style.css"],
-  "editor.fontFamily": "Fira code",
+  "editor.fontFamily": "Fira Code",
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
@@ -70,5 +70,5 @@
   "liveshare.joinDebugSessionOption": "Prompt",
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
-  "editor.lineNumbers": "relative"
+  // "editor.lineNumbers": "relative"
 }

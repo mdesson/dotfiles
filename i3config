@@ -25,6 +25,10 @@ default_border none
 default_floating_border none
 hide_edge_borders none
 
+#### MIKE: keyboard layout toggle ####
+bindsym Ctrl+Shift+a exec setxkbmap us;exec --no-startup-id /home/mike/.execXmodmap;exec --no-startup-id /home/mike/.execXmodmap
+bindsym Ctrl+Shift+s exec setxkbmap -layout ca -variant fr; exec --no-startup-id /home/mike/.execXmodmap;exec --no-startup-id /home/mike/.execXmodmap
+
 #### MIKE: i3-gaps ####
 # Set inner/outer gaps
 gaps inner 8 
@@ -202,7 +206,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command /home/mike/dotfiles/language_bar.sh
 }
 
 ### MIKE: Fix exit (1) i3bar bug ###
@@ -234,5 +238,4 @@ mode "$mode_system" {
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
     bindsym Escape mode "default"
-}
 
