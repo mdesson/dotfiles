@@ -6,9 +6,9 @@ do
     LG=$(setxkbmap -query | awk '/layout/{print $2}')
     if [ $LG == "us" ]
     then
-        dat="[{ \"full_text\": \"Lang: $LG\", \"color\":\"#FF7600\" },"
+        dat="[{ \"full_text\": \"Lang: en\", \"color\":\"#FF7600\" },"
     else
-        dat="[{ \"full_text\": \"Lang: $LG\", \"color\":\"#7AD7F0\" },"
+        dat="[{ \"full_text\": \"Lang: fr\", \"color\":\"#7AD7F0\" },"
     fi
     echo "${line/[/$dat}" || exit 1
 done
