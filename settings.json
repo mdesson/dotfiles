@@ -70,5 +70,7 @@
   "liveshare.joinDebugSessionOption": "Prompt",
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.minimap.enabled": false
   // "editor.lineNumbers": "relative"
 }
