@@ -8,8 +8,6 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "window.zoomLevel": 0,
-  "editor.fontSize": 12,
   "editor.rulers": [120],
   "breadcrumbs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -49,8 +47,6 @@
   "terminal.integrated.allowChords": false,
   "editor.codeLens": true,
   "gitlens.gitCommands.closeOnFocusOut": true,
-  "go.formatTool": "goimports",
-  "go.useLanguageServer": true,
   "todo-tree.tree.showScanModeButton": false,
   "markdown-pdf.displayHeaderFooter": false,
   "markdown-pdf.margin.top": "1cm",
@@ -71,6 +67,19 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "python.languageServer": "Microsoft",
+  "go.formatTool": "goimports",
   // "editor.lineNumbers": "relative"
+  "python.autoComplete.extraPaths": [
+    "/usr/lib/python3.9/site-packages"
+  ],
+  "editor.tabSize": 2,
+  "editor.fontSize": 12,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ]
 }

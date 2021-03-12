@@ -204,7 +204,7 @@ let g:rainbow_active = 1
 
 " terminal settings
 set splitbelow
-set termwinsize=15*0
+set termwinsize=10*0
 
 " set utf-8 for full emoji support
 set encoding=utf-8
