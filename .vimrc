@@ -59,9 +59,6 @@ set noshowmode
 set timeoutlen=50
 " Set color theme
 
-" color theme
-colorscheme ron
-
 " show line numbers
 set number
 set relativenumber
@@ -71,16 +68,21 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'frazrepo/vim-rainbow'
 Plug 'plasticboy/vim-markdown'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/vim-peekaboo'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+if has('nvim')
+	Plug 'nvim-telescope/telescope.nvim'
+endif
 
 " markdown settings
 let g:vim_markdown_folding_disabled = 1
@@ -90,13 +92,26 @@ let g:vim_markdown_folding_disabled = 1
 let g:lightline = {'colorscheme': 'seoul256',}
 
 " Open nerd tree by default
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " nerdtree toggle is Ctrl-n
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " show dotfiles in nerdtree
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
+
+" Coc explorer shortcut
+" nnoremap <space>e :CocCommand explorer<CR>
+map <C-n> :CocCommand explorer<CR>
+
+" Telescope: Find files using Telescope command-line sugar.
+if has('nvim')
+	nnoremap <C-f> <cmd>Telescope find_files<cr>
+	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+	nnoremap <C-b> <cmd>Telescope buffers<cr>
+	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+endif
+
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -165,14 +180,14 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
+ 
+" " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
+ 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
-
+ 
 " Remap for format selected region
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
@@ -203,8 +218,10 @@ let g:go_def_mapping_enabled = 0
 let g:rainbow_active = 1
 
 " terminal settings
-set splitbelow
-set termwinsize=10*0
+if !has('nvim')
+	set splitbelow	
+	set termwinsize=10*0
+endif
 
 " set utf-8 for full emoji support
 set encoding=utf-8

@@ -12,6 +12,7 @@ ZSH_THEME="robbyrussell"
 
 # Show colours in ls by default
 alias ls='ls --color=auto'
+alias vim=nvim
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -106,10 +107,12 @@ plugins=(
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # For fzf in vim
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-  export FZF_DEFAULT_OPTS='-m --height 50% --border'
-fi
+# if type rg &> /dev/null; then
+#   export FZF_DEFAULT_COMMAND='rg --files'
+#   export FZF_DEFAULT_OPTS='-m --height 50% --border'
+# fi
+
 source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 
+fpath=(~/.zsh.d/ $fpath)

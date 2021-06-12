@@ -1,6 +1,5 @@
 {
   "editor.suggestSelection": "first",
-  "editor.formatOnSave": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.exclude": {
     "**/.classpath": true,
@@ -66,7 +65,7 @@
   "liveshare.joinDebugSessionOption": "Prompt",
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "golang.go",
   "editor.minimap.enabled": false,
   "python.languageServer": "Microsoft",
   "go.formatTool": "goimports",
@@ -81,5 +80,8 @@
       "viewType": "jupyter.notebook.ipynb",
       "filenamePattern": "*.ipynb"
     }
-  ]
+  ],
+  "go.toolsManagement.autoUpdate": true,
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 2
 }
