@@ -14,6 +14,12 @@ ZSH_THEME="robbyrussell"
 alias ls='ls --color=auto'
 alias vim=nvim
 
+# For building esp32, set current directory
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
+# Add envvar for id_path for esp32
+export IDF_PATH=~/esp/esp-idf
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -113,6 +119,7 @@ plugins=(
 # fi
 
 source $ZSH/oh-my-zsh.sh
+eval "xset m 1/8 10"
 eval "$(starship init zsh)"
 
 fpath=(~/.zsh.d/ $fpath)

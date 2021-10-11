@@ -75,12 +75,9 @@
   ],
   "editor.tabSize": 2,
   "editor.fontSize": 12,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "go.toolsManagement.autoUpdate": true,
   "editor.formatOnSave": true,
   "window.zoomLevel": 2
