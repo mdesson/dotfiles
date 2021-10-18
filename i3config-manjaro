@@ -33,20 +33,10 @@ bindsym $mod+Return exec /usr/bin/kitty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -icon-theme "Papirus" -show-icons -theme android_notification
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
-
-################################################################################################
-## MIKE SECTION
-################################################################################################
-# keyboard layout switcher
-bindsym $mod+q exec --no-startup-id /home/mike/dotfiles/toggle_language.sh
-
-# screenshot utility
-bindsym $mod+Shift+s exec flameshot gui
-
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -328,7 +318,7 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar
 	status_command i3status
-	position bottom
+	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
@@ -336,7 +326,7 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-#   font xft:URWGothic-Book 11
+	font pango:FiraCode Nerd Font 12
 	strip_workspace_numbers yes
 
     colors {
@@ -422,3 +412,18 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+################################################################################################
+## MIKE SECTION
+################################################################################################
+# keyboard layout switcher
+bindsym $mod+q exec --no-startup-id /home/mike/dotfiles/toggle_language.sh
+
+# screenshot utility
+bindsym $mod+Shift+s exec flameshot gui
+
+# rotate left screen to correct orientation
+exec xrandr --output DP-2 --rotate left
+exec xrandr --dpi 96 --fb 4480x2520 --output DP-3 --mode 2560x1440
+exec killall i3bar && i3bar --bar_id=bar-0
+
