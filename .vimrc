@@ -68,20 +68,20 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'itchyny/lightline.vim'
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'frazrepo/vim-rainbow'
 Plug 'plasticboy/vim-markdown'
 " Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/vim-peekaboo'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 if has('nvim')
 	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'nvim-lua/plenary.nvim'
 endif
 
 " markdown settings
@@ -92,17 +92,17 @@ let g:vim_markdown_folding_disabled = 1
 let g:lightline = {'colorscheme': 'seoul256',}
 
 " Open nerd tree by default
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " nerdtree toggle is Ctrl-n
-" map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " show dotfiles in nerdtree
-" let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
 " Coc explorer shortcut
 " nnoremap <space>e :CocCommand explorer<CR>
-map <C-n> :CocCommand explorer<CR>
+" map <C-n> :CocCommand explorer<CR>
 
 " Telescope: Find files using Telescope command-line sugar.
 if has('nvim')

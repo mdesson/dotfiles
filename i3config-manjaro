@@ -270,7 +270,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id manjaro-hello
+#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -279,7 +279,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 60 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -422,8 +422,17 @@ bindsym $mod+q exec --no-startup-id /home/mike/dotfiles/toggle_language.sh
 # screenshot utility
 bindsym $mod+Shift+s exec flameshot gui
 
+# emoji picker utility
+bindsym $mod+period exec rofi -show emoji -modi emoji
+
 # rotate left screen to correct orientation
 exec xrandr --output DP-2 --rotate left
-exec xrandr --dpi 96 --fb 4480x2520 --output DP-3 --mode 2560x1440
+
+# For changing second monitor scaling
+# exec xrandr --dpi 96 --fb 4480x2520 --output DP-3 --mode 2560x1440
+
+# Start solaar to set mouse sensitivity
+exec solaar --window=hide
+
 exec killall i3bar && i3bar --bar_id=bar-0
 
