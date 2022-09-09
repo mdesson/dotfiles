@@ -121,5 +121,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 eval "xset m 1/8 10"
 eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
 
 fpath=(~/.zsh.d/ $fpath)
