@@ -303,20 +303,6 @@ set $ws10 "10"
 #workspace $ws4 output HDMI-0
 #workspace $ws5 output HDMI-0
 
-# bind program to workspace and focus to them on startup:
-assign [class="kitty"] $ws1
-assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="Thunderbird"] $ws4
-assign [class="TelegramDesktop"] $ws5
-
-# automatic set focus new window if it opens on another workspace then the current:
-for_window [class=kitty] focus
-for_window [class=(?i)firefox] focus
-for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
-
 ##############
 # compositor #
 ##############
@@ -328,7 +314,7 @@ for_window [class=TelegramDesktop] focus
 #
 # xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
 # manpage: https://man.archlinux.org/man/xcompmgr.1.en
-#exec --no-startup-id xcompmgr -C -n &
+# exec --no-startup-id xcompmgr -C -n &
 # or an more specialized config like this:
 #exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 #
@@ -343,7 +329,7 @@ for_window [class=TelegramDesktop] focus
 #exec_always --no-startup-id picom -b
 #
 # for custom config:
-#exec_always --no-startup-id picom --config  ~/.config/picom.conf
+# exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 #############################################
 # autostart applications/services on login: #
@@ -568,6 +554,12 @@ bindsym $mod+t exec rofi -show window \
 #bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
+#############################
+# rofimoji for emoji picker #
+#############################
+
+bindsym $mod+period exec --no-startup-id rofimoji
+
 ####################
 # startup programs #
 ####################
@@ -579,4 +571,4 @@ exec xrandr --output DP-2 --rotate left
 bindsym $mod+Shift+s exec flameshot gui
 
 # set desktop background
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; # picom -b  #--config ~/.config/example.picom.conf
