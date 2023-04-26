@@ -118,6 +118,7 @@ plugins=(
 #   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 # fi
 
+
 source $ZSH/oh-my-zsh.sh
 eval "xset m 1/8 10"
 eval "$(starship init zsh)"
