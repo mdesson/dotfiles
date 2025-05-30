@@ -565,10 +565,16 @@ bindsym $mod+period exec --no-startup-id rofimoji
 ####################
 
 # rotate left screen to correct orientation
-exec xrandr --output DP-2 --rotate left
+exec xrandr --output DP-0 --rotate left --left-of DP-2
 
 # flameshot launch
 bindsym $mod+Shift+s exec flameshot gui
 
 # set desktop background
 exec --no-startup-id nitrogen --restore; sleep 1; # picom -b  #--config ~/.config/example.picom.conf
+
+# Set capslock as mod
+exec_always --no-startup-id setxkbmap -option caps:super
+
+# run solaar for half a second to set mouse speed
+exec_always --no-startup-id solaar &  pid=$! && sleep 0.5 && kill -9 $pid
