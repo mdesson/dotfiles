@@ -42,6 +42,10 @@ workspace_layout default
 # Each new window will open fullscreen as a tab (left to right)
 #workspace_layout tabbed
 
+# ADDED BY MIKE
+workspace 1 output DP-2
+workspace 2 output DP-1
+
 ##############################
 # extra options for windows: #
 ##############################
@@ -563,9 +567,6 @@ bindsym $mod+period exec --no-startup-id rofimoji
 ####################
 # startup programs #
 ####################
-
-# rotate left screen to correct orientation
-exec xrandr --output DP-2 --rotate left --left-of DP-1
 
 # flameshot launch
 bindsym $mod+Shift+s exec flameshot gui
