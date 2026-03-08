@@ -42,10 +42,6 @@ workspace_layout default
 # Each new window will open fullscreen as a tab (left to right)
 #workspace_layout tabbed
 
-# ADDED BY MIKE
-workspace 1 output DP-2
-workspace 2 output DP-1
-
 ##############################
 # extra options for windows: #
 ##############################
@@ -287,11 +283,11 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
